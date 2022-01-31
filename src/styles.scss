@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../src/app/shared/styles/themes/light.scss";
+@import "../src/app/shared/styles/themes/dark.scss";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
