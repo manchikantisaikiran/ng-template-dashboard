@@ -1,0 +1,77 @@
+<!-- <div class="sidebar-container">
+    <div class="logo-container">
+        <img class="logo" src="assets/angular_logo.svg" alt="logo">
+    </div>
+    <div class="nav-links-container">
+        <div class="nav-item" (click)="toggleNavItem($event)">
+             Dashboard
+             <img src="../../assets/down-arrow.png" class="down-arrow-img" alt="down-arrow">
+        </div>
+        <div class="nav-item-child-links">
+             <div>E-commerce</div>
+             <div>CRM</div>
+        </div>
+        <div class="nav-item" (click)="toggleNavItem($event)">
+             Forms
+             <img src="../../assets/down-arrow.png" class="down-arrow-img" alt="down-arrow">
+        </div>
+        <div class="nav-item-child-links">
+          <div>Controls and validations</div>
+          <div>Extended controls</div>
+          <div>Layouts</div>
+          <div>Forms</div>
+        </div>
+        <div class="nav-item">
+             Tables
+             <img src="../../assets/down-arrow.png" class="down-arrow-img" alt="down-arrow">
+        </div>
+        <div class="nav-item">
+             Utilities
+             <img src="../../assets/down-arrow.png" class="down-arrow-img" alt="down-arrow">
+        </div>
+        <div class="nav-item">
+             Charts
+             <img src="../../assets/down-arrow.png" class="down-arrow-img" alt="down-arrow">
+        </div>
+        <div class="nav-item">
+             Components
+             <img src="../../assets/down-arrow.png" class="down-arrow-img" alt="down-arrow">
+        </div>
+    </div>
+</div> -->
+
+<div class="wrapper sidebar-text-color">
+     <div class="logo">
+         <img src="assets/angular_logo.svg" alt="logo" height="24" width="24">
+     </div>
+     <div class="links">
+         <div class="links-container cursor" *ngFor="let obj of links; index as i;">
+             <div class="main-link" (click)="openChildLinks(i)">
+                 <span>
+                     {{obj.link}}
+                 </span>
+                 <img height="20" width="20" src="assets/down-arrow.png" [ngStyle]="{
+                     transform: obj.activeLink ? 'rotate(180deg)' : 'rotate(0deg)',
+                     transition: obj.activeLink ? 'all 250ms ease-out' : 'height 100ms ease-in'
+                 }">
+             </div>
+             <!-- *ngIf="obj.activeLink" -->
+             <ng-container>
+                 <div class="child-links" [ngStyle]="{
+                     visibility: obj.activeLink ? 'visible' : 'hidden',
+                     height: obj.activeLink ? (obj.childLinks.length * 40) + 'px' : '0px',
+                     transition: obj.activeLink ? 'all 250ms ease-out' : 'height 100ms ease-in'
+                 }">
+ 
+                     <!-- [ngClass]="{'active-links': obj.activeLink}" -->
+                     <div class="child-link" *ngFor="let o of obj.childLinks">
+                         {{o}}
+                     </div>
+                 </div>
+             </ng-container>
+         </div>
+     </div>
+     <div class="cursor menu" (click)="onToggleSidebar.emit()">
+         <img src="assets/menu.png" alt="Menu" height="24" width="24">
+     </div>
+ </div>

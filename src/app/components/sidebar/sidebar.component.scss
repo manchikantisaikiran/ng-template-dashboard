@@ -1,0 +1,110 @@
+// .sidebar-container{
+//     width: 225px;
+//     background-color: rgba(59,134,225);
+//     padding: 10px;
+//     height: 100vh;
+//     .nav-links-container{
+//         margin-top: 75px;
+//         .nav-item{
+//             display: flex;
+//             justify-content: space-between;
+//             padding: 12px;
+//             cursor: pointer;
+//             &:hover{
+//                 color: var(--bg-color);
+//             }
+//         }
+//         .nav-item-child-links{
+//             padding: 0 20px;
+//             max-height: 0;
+//             overflow: hidden;
+//             transition: max-height 0.2s ease-out;
+//             div{
+//                 cursor: pointer;
+//                 padding: 10px;
+//                 &:hover{
+//                     color: var(--bg-color);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// .logo{
+//      width: 60px;
+//      height: 60px;
+// }
+
+// .down-arrow-img{
+//     height: 14px;
+//     width: 14px;
+// }
+
+// .active{
+//     img{
+//         transform: rotate(180deg);
+//     }
+// }
+
+
+@import "../../shared/styles/themes/utils/mixins/create_styles";
+
+.wrapper {
+  padding: 24px 12px;
+  // background-color: blue;
+  // color: white;
+  // height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 45px 1fr;
+  gap: 1%;
+  position: relative;
+  z-index: 5;
+  // @include create-theme-styles((font-size:font-size,font-family:font-family));
+}
+
+.links{
+  padding: 30px 0px;
+}
+
+.links-container {
+  padding: 7px 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.child-links {
+  padding: 10px;
+  visibility: hidden;
+  height: 0px;
+  transition: all 250ms ease-out;
+
+  .child-link {
+    margin-bottom: 10px;
+    padding: 5px 15px 5px 20px;
+  }
+}
+
+.main-link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+    @include create-layout-styles((display: show-sidebar-logo),'component');
+}
+
+.menu {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #3b86ff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 92%;
+  top: 4%;
+  @include create-layout-styles((display: show-sidebar-menu),'component');
+}

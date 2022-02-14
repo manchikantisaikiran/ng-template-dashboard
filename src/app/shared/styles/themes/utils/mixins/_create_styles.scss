@@ -1,0 +1,88 @@
+@import "../../themes";
+@import "../functions/functions.scss";
+
+@mixin create-context($classes...) {
+  @each $class in $classes {
+    #{$class} & {
+      @content;
+    }
+  }
+}
+
+@mixin create-component-context($classes...) {
+  @each $class in $classes {
+    :host-context(#{$class}) & {
+      @content;
+    }
+  }
+}
+
+@mixin create-layout-context($layouts...) {
+  @each $layout in $layouts {
+    html[layout=#{$layout}] & {
+      @content;
+    }
+  }
+}
+
+@mixin create-component-level-layout-context($layouts...) {
+  @each $layout in $layouts {
+    // html[layout=]
+    :host-context(html[layout=#{$layout}]) & {
+      @content;
+    }
+  }
+}
+
+// @mixin create-theme-styles($styles, $level: "global") {
+//   @each $theme, $varaibles in $themes {
+//     @if $level == "component" {
+//       @include create-component-context(".#{$theme}") {
+//         @content;
+//         transition: all 250ms ease-in;
+//         @each $key, $value in $styles {
+//           $color: value-from-theme($theme, $value);
+//           $val: $color;
+//           #{$key}: #{$val};
+//         }
+//       }
+//     } @else {
+//       @include create-context(".#{$theme}") {
+//         @content;
+//         transition: all 250ms ease-in;
+//         @each $key, $value in $styles {
+//           $color: value-from-theme($theme, $value);
+//           $val: $color;
+//           #{$key}: #{$val};
+//         }
+//       }
+//     }
+//   }
+// }
+
+//create different layout styles
+@mixin create-layout-styles($styles, $level: "global") {
+  @each $layout, $varaibles in $layouts {
+    @if $level == "component" {
+      @include create-component-level-layout-context("#{$layout}") {
+        @content;
+        transition: all 250ms ease-in;
+        @each $key, $value in $styles {
+          $valu: value-from-layout($layout, $value);
+          $val: $valu;
+          #{$key}: #{$val};
+        }
+      }
+    } @else {
+      @include create-layout-context(".#{$layout}") {
+        @content;
+        transition: all 250ms ease-in;
+        @each $key, $value in $styles {
+          $valu: value-from-layout($layout, $value);
+          $val: $valu;
+          #{$key}: #{$val};
+        }
+      }
+    }
+  }
+}

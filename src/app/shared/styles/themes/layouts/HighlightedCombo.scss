@@ -1,0 +1,34 @@
+$highlighted-combo-layout:(
+    //grid layouts
+    page-layout-columns: 250px 1fr,
+    page-layout-rows: 60px 1fr,
+    header-layout-columns: 2/span 1,
+    sidebar-layout-columns: 1/ span 1,
+    sidebar-layout-rows: 1/ span 2,
+    main-content-width-rows: 2/ span 2,
+    
+    //spacing
+    logo-margin-right: 0px,
+    header-height: 60px,
+    
+    header-search-bar-border-bottom: 1px solid white,
+
+    //displays
+    show-action-btns-divider-one: none,
+    show-action-btns-divider-two: block,
+    show-header-logo: none,
+    show-sidebar-logo: block,
+    show-sidebar-menu: none,
+    
+    //positions
+    header-position: relative,
+
+    //colors
+    // header-bg: #0071c5,
+    // header-color: white,
+    // search-input-placeholder-color: white,
+    search-input-bg: var(--primary),
+    // divider-bg: white,
+    // sidebar-bg: initial,
+    // sidebar-color: initial,
+);

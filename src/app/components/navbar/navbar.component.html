@@ -1,0 +1,31 @@
+<div class="header header-text-color">
+    <img class="logo" src="assets/angular_logo.svg" alt="logo" height="24" width="24">
+    <div class="left">
+        <div class="item cursor" (click)="onToggleSidebar.emit()">
+            <img width="24" height="24" src="assets/menu.png" alt="menu">
+        </div>
+        <div class="item">
+            <input type="text" name="search" id="search" placeholder="Search">
+        </div>
+    </div>
+    <div class="action-btns-divider one"></div>
+    <div class="action-btns">
+        <div class="item cursor">
+            <img width="24" height="24" src="assets/bell.png" title="notification icon">
+        </div>
+        <div class="item cursor" (click)="onSettings.emit()">
+            <img width="24" height="24" src="assets/slider.png" title="notification icon">
+        </div>
+    </div>
+    <div class="action-btns-divider two"></div>
+    <div class="right">
+        <div class="item">
+            <img class="profile-img" src="https://angular-fully-basic.angular-templates.io/assets/imgs/users/user-8.jpeg"
+                alt="profile-img" width="40" height="40">
+        </div>
+        <div class="item profile-name">
+            <span>Alex Martins</span>
+            <img width="20" height="20" src="assets/down-arrow.png">
+        </div>
+    </div>
+</div>

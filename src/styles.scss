@@ -1,15 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../src/app/shared/styles/themes/light.scss";
-@import "../src/app/shared/styles/themes/dark.scss";
+@import "./app/shared/styles/themes/colors/light.scss";
+@import "./app/shared/styles/themes/colors/dark.scss";
 
 
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
+
 
 body{
     color: var(--text-color);
     background-color: var(--bg-color);
+}
+
+.cursor{
+    cursor: pointer;
+}
+
+.text-color{
+    color: var(--text-color);
+}
+
+.header-text-color{
+    color: var(--header-text-color);
+}
+
+.sidebar-text-color{
+    color: var(--sidebar-text-color);
+}
+
+.themes-section-text-color{
+    color: var(--themes-section-text-color);
 }

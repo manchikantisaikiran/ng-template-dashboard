@@ -1,0 +1,35 @@
+$highlighted-top-nav-layout:(
+    //grid layouts
+    page-layout-columns: 250px 1fr,
+    page-layout-rows: 60px 1fr,
+    header-layout-columns: 1/span 2,
+    main-content-width-rows: 2/ span 2,
+
+    //spacing
+    logo-margin-right: 170px,
+    header-height: 60px,
+
+    //displays
+    show-action-btns-divider-one: block,
+    show-action-btns-divider-two: none,
+    show-header-logo: block,
+    header-search-bar-border-bottom: none,
+    show-sidebar-logo: none,
+    show-sidebar-menu: none,
+
+    //positions
+    header-position: relative,
+
+    //colors
+    // header-bg: white,
+    // header-color: #666d77,
+    // sidebar-bg: rgb(245,245,245),
+    // sidebar-color: #666D77,
+    // sidebar-box-shadow: none,
+    // home-bg: rgb(245,245,245),
+    // search-input-placeholder-color: initial,
+    search-input-bg: initial,
+    // divider-bg: none
+
+
+);

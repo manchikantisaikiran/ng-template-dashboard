@@ -1,0 +1,46 @@
+$side-nav-side-menu-layout:(
+    //grid layouts
+    page-layout-columns: 60px 250px 1fr,
+    header-layout-columns: 1/span 1,
+    header-layout-rows: 1/span 2,
+    sidebar-layout-columns: 2/span 1,
+    sidebar-layout-rows: 1/ span 2,
+    main-content-rows: 1/ span 2,
+    main-content-width-columns: 2/span 2,
+    main-content-width-rows: 1/ span 2,
+
+    //themes section layout
+    themes-section-left-position: -220px,
+    themes-section-translate: translateX(220px),
+    
+    //spacing
+    logo-margin-right: 0px,
+    header-height: 100%,
+    header-padding: 16px 10px,
+    action-btns-padding: 0px,
+    
+    //flex direcions
+    header-container-flex-direction: column,
+    action-btns-flex-direction:column,
+    action-btns-justify-content: flex-end,
+    profile-links-align-items: flex-end,
+
+    //displays
+    show-action-btns-divider-one: none,
+    show-action-btns-divider-two: none,
+    show-header-logo: block,
+    header-search-bar-border-bottom: none,
+    show-sidebar-logo: none,
+    show-menu-icon:none,
+    show-profile-name: none,
+    show-sidebar-menu: flex,
+    
+    //positions
+    header-position: absolute,
+
+    //colors
+    // header-bg: #0071c5,
+    // header-color: white,
+    // sidebar-bg: rgb(245,245,245),
+    // sidebar-color: #666D77,
+);

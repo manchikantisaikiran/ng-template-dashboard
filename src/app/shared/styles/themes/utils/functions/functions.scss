@@ -1,0 +1,15 @@
+@use "sass:map";
+// @import '../../../app/apps/custom-app/themes/light.scss';
+// @import '../../themes';
+
+// @function color($color,$colors:$custom-light-theme) {
+//   @return map.get($colors, $color);
+// }
+
+// @function value-from-theme($theme,$value) {
+//   @return map-get(map-get($themes, $theme), $value);
+// }
+
+@function value-from-layout($layout,$value) {
+  @return map-get(map-get($layouts, $layout), $value);
+}

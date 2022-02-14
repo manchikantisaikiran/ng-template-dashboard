@@ -1,0 +1,50 @@
+<div class="header" [ngClass]="{'adjust-header-view':isSidebarHidden}">
+    <app-navbar (onSettings)="toggleTheme()" (onToggleSidebar)="toggleSidebar()"></app-navbar>
+</div>
+<div class="sidebar" [ngClass]="{'sidebar-hide':isSidebarHidden,'sidebar-show':!isSidebarHidden}">
+    <app-sidebar (onToggleSidebar)="toggleSidebar()"></app-sidebar>
+</div>
+<div class="main-content" [ngClass]="{'main-content-width':isSidebarHidden}">
+    <router-outlet></router-outlet>
+</div>
+
+<div class="overlay" [ngClass]="{'show-overlay':themeSection}" (click)="toggleTheme()"></div>
+
+<div class="themes-section themes-section-text-color" [ngClass]="{'show-theme-section': themeSection}">
+    <h2>Settings</h2>
+    <div class="theme">
+        <h3>Select Theme</h3>
+        <div class="theme-modes">
+            <img src="assets/sun.svg" height="24" width="24" class="cursor" (click)="changeThemeMode('light')" [ngClass]="{'active-mode':activeThemeMode==='light'}">
+            <img  src="assets/moon.png" height="24" width="24" class="cursor" (click)="changeThemeMode('dark')" [ngClass]="{'active-mode':activeThemeMode==='dark'}">
+        </div>
+        <!-- <div class="themes"> -->
+            <!-- <div class="cursor" (click)="changeTheme('default')" [ngClass]="{'active-theme':activeTheme==='default'}">
+                Default
+            </div> -->
+            <!-- <div class="cursor" (click)="changeTheme('bootstrap')" [ngClass]="{'active-theme':activeTheme==='bootstrap'}">
+                Bootstrap
+            </div>
+            <div class="cursor" (click)="changeTheme('material')" [ngClass]="{'active-theme':activeTheme==='material'}">
+                Material
+            </div> -->
+        <!-- </div> -->
+    </div>
+    <div class="layout">
+        <h3>Choose Layout</h3>
+        <div class="layouts">
+            <div class="cursor" (click)="changeLayout('highlighted-top-nav')" [ngClass]="{'active-theme':activeLayout==='highlighted-top-nav'}">
+                Highlighted Top Nav
+            </div>
+            <div class="cursor" (click)="changeLayout('highlighted-side-menu')" [ngClass]="{'active-theme':activeLayout==='highlighted-side-menu'}">
+                Highlighted Side Menu
+            </div>
+            <div class="cursor" (click)="changeLayout('highlighted-combo')" [ngClass]="{'active-theme':activeLayout==='highlighted-combo'}">
+                Highlighted Combo
+            </div>
+            <div class="cursor" (click)="changeLayout('side-nav-side-menu')" [ngClass]="{'active-theme':activeLayout==='side-nav-side-menu'}">
+                Side Nav + Side Menu
+            </div>
+        </div>  
+    </div>
+</div>

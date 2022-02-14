@@ -1,0 +1,13 @@
+//all available themes in project
+
+@import "./layouts/sideNavAndSideMenu.scss";
+@import "./layouts/highlightedTopNav.scss";
+@import "./layouts/HighlightedCombo.scss";
+@import "./layouts/HighlightedSideMenu.scss";
+  
+$layouts: (
+  highlighted-top-nav: $highlighted-top-nav-layout,
+  highlighted-side-menu: $highlighted-side-menu-layout, 
+  highlighted-combo: $highlighted-combo-layout,
+  side-nav-side-menu: $side-nav-side-menu-layout,
+);

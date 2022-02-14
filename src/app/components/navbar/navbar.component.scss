@@ -1,0 +1,103 @@
+@import "../../shared/styles/themes/utils/mixins/create_styles";
+
+.header{
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    // background-color: white;
+    // width: 60px;
+    z-index: 10;
+    // height: 60px;
+    color:var(--header-color);
+    background-color:var(--header-bg);
+    @include create-layout-styles((
+        height: header-height,
+        flex-direction: header-container-flex-direction,
+        padding: header-padding,
+        position: header-position,
+        ),'component');
+    .left{
+        display: flex;
+        height: 100%;
+        flex-grow: 1;
+        gap: 30px;
+        align-items: center;
+        @include create-layout-styles((
+        display: show-menu-icon
+        ),'component');
+    }
+    .right, .action-btns{
+        display: flex;
+        gap: 30px;
+        height: 100%;
+        align-items: center;
+        padding: 0 20px;
+        @include create-layout-styles((
+        padding: action-btns-padding
+        ),'component');
+    }
+    .right{
+        gap: 15px;
+        @include create-layout-styles((
+        align-items: profile-links-align-items
+        ),'component');
+    }
+    .action-btns {
+        @include create-layout-styles((
+        flex-direction: action-btns-flex-direction,
+        justify-content: action-btns-justify-content
+        ),'component');
+    }
+}
+
+.profile-img{
+    border-radius: 50%;    
+}
+
+.profile-name {
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    @include create-layout-styles((
+        display: show-profile-name
+        ),'component');
+}
+
+#search{
+    border: none;
+    padding: 5px;
+    @include create-layout-styles((
+        background-color: search-input-bg,
+        border-bottom: header-search-bar-border-bottom,
+        ),'component');
+}
+
+#search::placeholder{
+    @include create-layout-styles((
+        color: search-input-placeholder-color
+        ),'component');
+}
+
+.bi-sliders::before{
+    transform: rotate(-90deg);
+}
+
+.action-btns-divider {
+    height: 50%;
+    margin: auto;
+    width: 2px;
+    background-color: gray;
+    &.one{
+        @include create-layout-styles((display: show-action-btns-divider-one,background-color:divider-bg),'component');
+    }
+    &.two{
+        @include create-layout-styles((display: show-action-btns-divider-two,background-color:divider-bg),'component');
+    }
+}
+
+.logo{
+    @include create-layout-styles((
+        display: show-header-logo,
+        margin-right: logo-margin-right
+    ),'component');
+}
